@@ -1,8 +1,9 @@
 # Azure Blob to Local Backup
 
-Azure Blob to Local Backup is a MIT-licensed .NET Core library with a console app, which can backup millions of Azure Blobs to any local storage (e. g. local hard drives, USB sticks, network drives).
+Azure Blob to Local Backup is a MIT-licensed .NET Core library with a console app, which can backup millions of Azure Blobs to any local storage (e. g. local hard drives, USB sticks, network drives). (c) Smart In Media 2020
 
-*Direct download to the console application* (run with blobtolocal job...json): https://spreader.blob.core.windows.net/blobtolocal/BlobToLocalConsole.zip
+**Direct download to the console application**
+(run with blobtolocal job...json): https://spreader.blob.core.windows.net/blobtolocal/BlobToLocalConsole.zip
 
 ## Why?
 We have an Azure account with millions of blobs of our customers with 50 - 100 TB. We were confronted with the challenge of backing up files, because if we would lose our customer data, our company would be dead. Of course, Azure keeps redundant backups of each blobs and why not trust Microsoft? However, what happens, when a hacker or a drunk/insane employee willingly or unwillingly deletes all data with an admin account? Solutions like "soft delete" or any backup apps on Azure do not seem to be an alternative, because with full admin access, you could also delete those.
