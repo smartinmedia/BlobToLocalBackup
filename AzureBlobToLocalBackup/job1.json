@@ -1,0 +1,51 @@
+﻿{
+  "Job": {
+    "Name": "Job1",
+    "DestinationFolder": "D:/temp/azurebackup",
+    "ResumeOnRestartedJob": true, //If a job fails and you run it again - go on where the job left of?
+    "NumberOfRetries": 0, // How often retry if download of file fails?
+    "NumberCopyThreads": 1, //How many downloads from Azure simultaneously
+    "KeepNumberVersions": 5, //max 99
+    "DaysToKeepVersion": 0, // 0 or null = forever
+    "FilenameContains": "", //Optional - Only backup filenames, which have... "*" as wildcard before and / or after string
+    "FilenameWithout": "", //Optional - Exclude files with filenames, which have... "*" as wildcard before and / or after string
+    "ReplaceInvalidTargetFilenameChars": false, //Will replace illegal characters in target filename with "_" 
+    "TotalDownloadSpeedMbPerSecond": 0,
+    //"FilesToBackupCsvList": "D:\\vmc\\abc\\abc.csv", //If you provide a Csv list (only one column, has to be in the form of <Storage Account>/<Container>/<Filename>
+    //You can provide a second column with the target filename (with folders, if you like)
+
+    "StorageAccounts": [
+      {
+
+        "Name": "abc",
+        "SasConnectionString": "", //Leave away or empty, if you use other means of authentication
+        "FilenameContains": "",
+        "FilenameWithout": "",
+        "Containers": [
+          {
+            "Name": "test",
+            "FilenameContains": "",
+            "FilenameWithout": "",
+            "Blobs": [
+              {
+                "Filename": "EasyRadiology Infomappe.pdf",
+                "TargetFilename": "projects/radiology/a3.pdf"
+
+              }
+            ]
+          },
+          {
+            "Name": "test2"
+          }
+        ]
+
+      },
+      {
+        "Name": "abcde",
+        "SasConnectionString": "",
+        "Containers": [] //take all containers, if empty array
+      }
+    ]
+  }
+  
+}
